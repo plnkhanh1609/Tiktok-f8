@@ -1,0 +1,18 @@
+@import 'normalize.css';
+@import 'fonts.css';
+
+:root {
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'ProximaNova';
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
