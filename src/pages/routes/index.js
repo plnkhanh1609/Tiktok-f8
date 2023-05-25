@@ -1,8 +1,8 @@
-import DefaultLayout from '~/components/Layout/DefaultLayout';
+import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Following from '../Following';
 import Home from '../Home';
 import Upload from '../Upload';
-import { HeaderOnly } from '~/components/Layout';
+import { HeaderOnly } from '~/components/Layouts';
 
 const publicRoutes = [
     {

@@ -1,15 +1,16 @@
-import Header from './Header';
+import Header from '../components/Header';
 import Sidebar from './SideBar';
 import { Outlet } from 'react-router-dom';
-
+import classNames from 'classnames/bind';
+import styles from './DefaultLayout.module.scss'
 function DefaultLayout() {
-    console.log('Re-render');
+    const cx = classNames.bind(styles)
     return (
         <div>
             <Header />
-            <div className="container">
+            <div className={`${cx('container')} d-flex`}>
                 <Sidebar />
-                <div className="content">
+                <div className={`${cx('content')}`}>
                     <Outlet />
                 </div>
             </div>
