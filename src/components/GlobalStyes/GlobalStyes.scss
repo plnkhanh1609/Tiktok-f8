@@ -3,7 +3,10 @@
 
 :root {
     //DefaultLayout
-    --default-layout-header-height: 60px
+    --primary: rgba(254, 44, 85, 1);
+    --default-layout-header-height: 60px;
+    --black: #000;
+    --text-color: #333;
 }
 * {
     box-sizing: border-box;
@@ -18,12 +21,23 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    color: var(--text-color);
 }
 
 //Common
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+a[href] {
+    color: var(--text-color);
+}
 .d-flex {
     display: flex;
 }
-.center{
+.center {
     align-items: center;
+    text-decoration: none;
 }
