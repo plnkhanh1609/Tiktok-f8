@@ -1,0 +1,19 @@
+.content {
+    min-width: 224px;
+}
+.see-more-popup {
+    padding-bottom: 8px;
+    padding-left: 0;
+    list-style: none;
+}
+.item {
+    &:hover {
+        background: rgba(22, 24, 35, 0.05);
+    }
+    .btn {
+        border-radius: 0;
+        padding: 10px 8px 10px 16px;
+        width: 100%;
+        text-align: start;
+    }
+}

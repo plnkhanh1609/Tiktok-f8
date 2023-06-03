@@ -6,6 +6,7 @@
     --primary: rgba(254, 44, 85, 1);
     --default-layout-header-height: 60px;
     --black: #000;
+    --white: #fff;
     --text-color: #333;
 }
 * {
@@ -33,11 +34,11 @@ input,
 }
 a[href] {
     color: var(--text-color);
+    text-decoration: none;
 }
 .d-flex {
     display: flex;
 }
 .center {
     align-items: center;
-    text-decoration: none;
 }
