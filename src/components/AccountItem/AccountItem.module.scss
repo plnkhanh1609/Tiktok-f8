@@ -1,5 +1,13 @@
 .wrapper {
+    font-family: var(--font-secondary);
+    padding: 0;
+}
+.account {
+    cursor: pointer;
     padding: 9px 16px;
+    &:hover {
+        background: rgb(0, 0, 0, 0.06);
+    }
 }
 .avatar {
     width: 40px;

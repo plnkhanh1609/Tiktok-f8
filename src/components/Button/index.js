@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const cx = classNames.bind(styles);
 function Button({
@@ -39,7 +38,7 @@ function Button({
             }
         });
     }
-    const classes = cx('wrapper', {
+    const classes = cx('wrapper', 'd-flex', 'center', {
         [customClasses]: customClasses,
         text,
         primary,
@@ -49,19 +48,12 @@ function Button({
         large,
         disable,
     });
+    const { icon: Icon, position } = icon;
     return (
         <Comp className={classes} {...props}>
-            {icon && icon.position == 'left' ? (
-                <FontAwesomeIcon className={cx(icon.position)} icon={icon.name} />
-            ) : (
-                ''
-            )}
+            {Icon && position === 'left' ? <Icon classname={cx(position)} /> : ''}
             {children}
-            {icon && icon.position == 'right' ? (
-                <FontAwesomeIcon className={cx(icon.position)} icon={icon.name} />
-            ) : (
-                ''
-            )}
+            {Icon && position === 'right' ? <Icon classname={cx(position)} /> : ''}
         </Comp>
     );
 }

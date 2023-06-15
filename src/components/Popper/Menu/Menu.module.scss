@@ -6,14 +6,37 @@
     padding-left: 0;
     list-style: none;
 }
+.menuUser,
 .item {
     &:hover {
         background: rgba(22, 24, 35, 0.05);
     }
     .btn {
+        line-height: normal;
         border-radius: 0;
         padding: 10px 8px 10px 16px;
         width: 100%;
         text-align: start;
     }
+}
+.menuUser:last-child {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+//header-menu
+
+.header {
+    position: relative;
+    justify-content: center;
+}
+.back-btn {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: absolute;
+    background: transparent;
+    left: 16px;
+}
+.header-title {
+    font-family: var(--font-secondary);
+    font-size: 1.6rem;
+    font-weight: 600;
 }

@@ -8,6 +8,18 @@
     --black: #000;
     --white: #fff;
     --text-color: #333;
+    --font-primary: 'ProximaNova';
+    --font-secondary: 'IBM Plex Sans', sans-serif;
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
 }
 * {
     box-sizing: border-box;
@@ -24,7 +36,10 @@ body {
     text-rendering: optimizeSpeed;
     color: var(--text-color);
 }
+#root{
 
+    height: 1000px;
+}
 //Common
 button,
 input,
@@ -41,4 +56,9 @@ a[href] {
 }
 .center {
     align-items: center;
+}
+
+//tooltip
+.tippy-svg-arrow {
+    fill: rgba(84, 84, 84, 0.92);
 }

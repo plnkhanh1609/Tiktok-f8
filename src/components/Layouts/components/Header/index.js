@@ -1,46 +1,97 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleNotch,
-    faCircleQuestion,
-    faCircleXmark,
-    faEarthAsia,
-    faEllipsisVertical,
-    faKeyboard,
-    faMagnifyingGlass,
-    faMoon,
-    faPlus,
-} from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react/headless';
+import { default as ToolTip } from '@tippyjs/react';
+import { roundArrow } from 'tippy.js';
+import 'tippy.js/dist/svg-arrow.css';
 
 import styles from './Header.module.scss';
 import img from '~/assets/images';
-import { Menu, Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import {
+    CircleQuestionIcon,
+    CoinIcon,
+    FavoriteIcon,
+    GearIcon,
+    KeyBoardIcon,
+    LanguageIcon,
+    LogoutIcon,
+    MessageIcon,
+    MoonIcon,
+    MoreIcon,
+    NotifyIcon,
+    PlusIcon,
+    UserIcon,
+} from '~/components/Icons';
+import Image from '~/components/Images';
+import { Menu } from '~/components/Popper';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
-
 const MENU_ITEM = [
     {
-        icon : faEarthAsia,
-        title : 'Tiếng Việt'
+        icon: LanguageIcon,
+        title: 'Tiếng Việt',
+        children: {
+            title: 'Ngôn ngữ',
+            data: [
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+            ],
+        },
     },
     {
-        icon : faCircleQuestion,
-        title : 'Phản hồi và trợ giúp'
+        icon: CircleQuestionIcon,
+        title: 'Phản hồi và trợ giúp',
+        to: '/feedback',
     },
     {
-        icon : faKeyboard,
-        title : 'Phím tắt trên bàn phím'
+        icon: KeyBoardIcon,
+        title: 'Phím tắt trên bàn phím',
     },
     {
-        icon : faMoon,
-        title : 'Chế độ tối'
+        icon: MoonIcon,
+        title: 'Chế độ tối',
     },
-]
+];
+const MENU_USER_ITEM = [
+    {
+        icon: UserIcon,
+        title: 'Xem hồ sơ',
+        to: '/feedback',
+    },
+    {
+        icon: FavoriteIcon,
+        title: 'Yêu thích',
+        to: '/feedback',
+    },
+    {
+        icon: CoinIcon,
+        title: 'Nhận xu',
+        to: '/feedback',
+    },
+    {
+        icon: GearIcon,
+        title: 'Cài đặt',
+        to: '/feedback',
+    },
+    ...MENU_ITEM,
+    {
+        icon: LogoutIcon,
+        title: 'Đăng xuất',
+        to: '/logout',
+    },
+];
+const handleMenuChange = (menuItem) => {
+    console.log(menuItem);
+};
+const currenUser = true;
 function Header() {
     return (
         <header className={`${cx('header')} d-flex center`}>
@@ -50,54 +101,61 @@ function Header() {
                         <img src={img.logo} alt="TikTok" />
                     </Link>
                 </div>
-                <Tippy
-                    render={(attrs) => (
-                        <div className={`${cx('search-result')}`} {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={`${cx('search-account__title')}`}>Tài khoản</h4>
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                    visible
-                    interactive
-                >
-                    <div className={`${cx('search')} d-flex center`}>
-                        <input
-                            className={``}
-                            type="text"
-                            spellCheck={false}
-                            placeholder={'Tìm kiếm'}
-                        />
-                        <button className={`${cx('close')}`}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <button className={`${cx('spinner')}`}>
-                            <FontAwesomeIcon icon={faCircleNotch} />
-                        </button>
-                        <span className={`${cx('search__split')}`}></span>
-                        <button className={`${cx('search__icon')}`}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </Tippy>
+                <Search />
                 <div className={`${cx('header-cta')} d-flex center`}>
                     <Button
+                        to="upload"
                         icon={{
                             position: 'left',
-                            name: faPlus,
+                            icon: PlusIcon,
                         }}
                     >
                         Tải lên
                     </Button>
-                    <Button primary>Đăng nhập</Button>
-                    <Menu data= {MENU_ITEM}>
-                        <button className={cx('more-btn')}>
-                            <FontAwesomeIcon
-                                className={cx('more-icon')}
-                                icon={faEllipsisVertical}
+                    {currenUser ? (
+                        <>
+                            <ToolTip
+                                placement="bottom"
+                                arrow={roundArrow}
+                                content="Tin nhắn"
+                                className={cx('tooltip')}
+                            >
+                                <button className={cx('action-btn', 'message-icon')}>
+                                    <MessageIcon />
+                                </button>
+                            </ToolTip>
+                            <ToolTip
+                                content="Hộp thư"
+                                placement="bottom"
+                                arrow={roundArrow}
+                                className={cx('tooltip')}
+                            >
+                                <button className={cx('action-btn')}>
+                                    <NotifyIcon />
+                                </button>
+                            </ToolTip>
+                        </>
+                    ) : (
+                        <Button primary>Đăng nhập</Button>
+                    )}
+
+                    <Menu
+                        data={currenUser ? MENU_USER_ITEM : MENU_ITEM}
+                        onChange={handleMenuChange}
+                        menuUser={currenUser}
+                    >
+                        {currenUser ? (
+                            <Image
+                                className={cx('avatar-user')}
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/c71a054853b1b81f432dff5faef87cb5~c5_720x720.jpeg?x-expires=1686286800&x-signature=pXv9OVtQce2eMbJDtIgYuWipEZY%3D"
+                                alt=""
+                                fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
-                        </button>
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <MoreIcon classname={cx('more-icon')} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
             </div>

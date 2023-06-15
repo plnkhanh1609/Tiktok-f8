@@ -1,13 +1,11 @@
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
-import Following from '../Following';
-import Home from '../Home';
-import Upload from '../Upload';
 import { HeaderOnly } from '~/components/Layouts';
-
+import { Following, Home, Upload, Profile, ErrorPage } from '~/pages';
 const publicRoutes = [
     {
         path: '/',
         element: <DefaultLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
@@ -16,6 +14,10 @@ const publicRoutes = [
             {
                 path: 'following',
                 element: <Following />,
+            },
+            {
+                path: 'user/:nickname',
+                element: <Profile />,
             },
         ],
     },

@@ -3,7 +3,7 @@
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     min-width: 100px;
-    padding: 7px 16px;
+    padding: 7px 12px;
     border-radius: 4px;
     border: 1px solid rgba(22, 24, 35, 0.12);
     background: var(--white);
@@ -33,7 +33,7 @@
     border: 1px solid var(--primary);
     color: var(--primary);
 }
-.rounded{
+.rounded {
     border-radius: 999px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
@@ -53,10 +53,10 @@
     opacity: 0.5;
 }
 .left {
-    width: 2rem;
+    display: flex;
     margin-right: 8px;
 }
 .right {
-    width: 2rem;
+    display: flex;
     margin-left: 8px;
 }
