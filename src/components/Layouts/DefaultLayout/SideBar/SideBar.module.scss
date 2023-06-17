@@ -1,3 +1,6 @@
-.wrapper{
-    width: 240px;
+@import url('../DefaultLayout.module.scss');
+.wrapper {
+    width: var(--sidebar-witdh);
+    position: fixed;
+    top: 60px;
 }

@@ -19,6 +19,7 @@ function Search() {
     const debounce = useDebounce(value, 500);
     const API = 'users/search';
 
+    //GEt data search
     useEffect(() => {
         if (!debounce.trim()) {
             setSearchResult([]);
@@ -45,6 +46,11 @@ function Search() {
     const handleHideReult = () => {
         setShowResult(false);
     };
+    const handleChange = (searchValue) => {
+        if (!searchValue.startsWith(' ')) {
+            setValue(searchValue);
+        }
+    };
     return (
         <Tippy
             visible={showResult}
@@ -67,9 +73,7 @@ function Search() {
                     ref={inputSearch}
                     value={value}
                     onChange={(e) => {
-                        if (!e.target.value.startsWith(' ')) {
-                            setValue(e.target.value);
-                        }
+                        handleChange(e.target.value);
                     }}
                     className={``}
                     type="text"
@@ -88,7 +92,10 @@ function Search() {
                     </button>
                 )}
                 <span className={`${cx('search__split')}`}></span>
-                <button className={`${cx('search__icon')} d-flex center`}>
+                <button
+                    className={`${cx('search__icon')} d-flex center`}
+                    onMouseDown={(e) => e.preventDefault()}
+                >
                     <SearchIcon />
                 </button>
             </div>

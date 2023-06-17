@@ -1,6 +1,7 @@
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import { HeaderOnly } from '~/components/Layouts';
 import { Following, Home, Upload, Profile, ErrorPage } from '~/pages';
+import routes from '~/config/routes';
 const publicRoutes = [
     {
         path: '/',
@@ -8,21 +9,21 @@ const publicRoutes = [
         errorElement: <ErrorPage />,
         children: [
             {
-                path: '/',
+                path: routes.home,
                 element: <Home />,
             },
             {
-                path: 'following',
+                path: routes.following,
                 element: <Following />,
             },
             {
-                path: 'user/:nickname',
+                path: routes.profile,
                 element: <Profile />,
             },
         ],
     },
     {
-        path: 'upload',
+        path: routes.upload,
         element: (
             <HeaderOnly>
                 <Upload />

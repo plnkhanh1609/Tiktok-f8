@@ -1,6 +1,12 @@
-.container {
+.wrapper {
+    --sidebar-witdh: 240px;
 
+    position: relative;
 }
-.content{
-    flex: 1;
+.container {
+    .content {
+        margin-left: var(--sidebar-witdh);
+        margin-top: 60px;
+        flex: 1;
+    }
 }

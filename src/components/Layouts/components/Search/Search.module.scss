@@ -4,7 +4,7 @@
 }
 .search-account__title {
     font-size: 1.4rem;
-    font-family: 'IBM Plex Sans';
+    font-family: var(--font-primary);
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
     padding: 5px 12px;
@@ -20,11 +20,12 @@
     border: 1.5px solid transparent;
 
     input {
+        font-family: var(--font-primary);
         width: 100%;
         color: var(--black);
         font-size: 1.6rem;
-        font-weight: 500;
-        font-family: 'ProximaNova';
+        font-weight: 400;
+        color: rgba(22, 24, 35, 1);
         line-height: 22px;
         caret-color: var(--primary);
     }
@@ -47,14 +48,15 @@
     margin: -3px 0;
     background: rgba(22, 24, 35, 0.12);
 }
-.spinner{
-    animation: spinner 1s linear infinite,
+.spinner {
+    animation: spinner 1s linear infinite;
 }
 @keyframes spinner {
-    from{
-        transform:translateY(-50%) rotate(0);
-    }to{
-        transform:translateY(-50%) rotate(360deg);
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
     }
 }
 .close,

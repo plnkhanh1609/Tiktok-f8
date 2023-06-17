@@ -1,7 +1,11 @@
 .content {
     min-width: 224px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    border-radius: 8px;
 }
 .see-more-popup {
+    max-height: min((100vh - 96px) - 60px, 734px);
+    overflow-y: auto;
     padding-bottom: 8px;
     padding-left: 0;
     list-style: none;
@@ -25,11 +29,16 @@
 //header-menu
 
 .header {
-    position: relative;
     justify-content: center;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    background: var(--white);
+    padding: 9px;
+    flex-shrink: 0;
 }
 .back-btn {
-    font-size: 1.6rem;
+    display: inline-flex;
     cursor: pointer;
     position: absolute;
     background: transparent;
