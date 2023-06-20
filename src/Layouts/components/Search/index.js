@@ -7,7 +7,7 @@ import { CloseIcon, LoadIcon, SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import useDebounce from '../hooks/useDebounce';
-import search from '~/apiServices/searchServices';
+import search from '~/Services/searchServices';
 
 const cx = classNames.bind(styles);
 function Search() {

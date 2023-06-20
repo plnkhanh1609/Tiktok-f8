@@ -7,7 +7,7 @@ import 'tippy.js/dist/svg-arrow.css';
 import styles from './Header.module.scss';
 import img from '~/assets/images';
 import Button from '~/components/Button';
-import routes from '~/config/routes';
+import config from '~/config';
 import {
     CircleQuestionIcon,
     CoinIcon,
@@ -39,150 +39,6 @@ const MENU_ITEM = [
                 {
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
                 },
                 {
                     code: 'en',
@@ -242,7 +98,7 @@ function Header() {
         <header className={`${cx('header')} d-flex center`}>
             <div className={`${cx('wrapper')} d-flex`}>
                 <div className={`${cx('logo')} d-flex center`}>
-                    <Link className="d-flex" to={routes.home}>
+                    <Link className="d-flex" to={config.routes.home}>
                         <img src={img.logo} alt="TikTok" />
                     </Link>
                 </div>

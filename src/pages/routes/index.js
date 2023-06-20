@@ -1,7 +1,7 @@
-import DefaultLayout from '~/components/Layouts/DefaultLayout';
-import { HeaderOnly } from '~/components/Layouts';
+
 import { Following, Home, Upload, Profile, ErrorPage } from '~/pages';
-import routes from '~/config/routes';
+import config from '~/config';
+import DefaultLayout ,{ HeaderOnly } from '~/Layouts';
 const publicRoutes = [
     {
         path: '/',
@@ -9,21 +9,21 @@ const publicRoutes = [
         errorElement: <ErrorPage />,
         children: [
             {
-                path: routes.home,
+                path: config.routes.home,
                 element: <Home />,
             },
             {
-                path: routes.following,
+                path: config.routes.following,
                 element: <Following />,
             },
             {
-                path: routes.profile,
+                path: config.routes.profile,
                 element: <Profile />,
             },
         ],
     },
     {
-        path: routes.upload,
+        path: config.routes.upload,
         element: (
             <HeaderOnly>
                 <Upload />

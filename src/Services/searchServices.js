@@ -1,4 +1,4 @@
-import * as requset from '~/ultis/request';
+import * as requset from '~/utils/httpRequest';
 
 const search = async (api, q, type = 'less') => {
     try {

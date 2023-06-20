@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
@@ -46,7 +47,7 @@ function Menu({ children, data = [], onChange = defaultfn }) {
                     <PopperWrapper>
                         {history.length > 1 && (
                             <Header
-                                title="Ngôn ngữ"
+                                title={items.title}
                                 onBack={() => {
                                     setHistory((prev) => prev.slice(0, prev.length - 1));
                                 }}
@@ -65,4 +66,9 @@ function Menu({ children, data = [], onChange = defaultfn }) {
     );
 }
 
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    data: PropTypes.array,
+    onChange: PropTypes.func,
+};
 export default Menu;
