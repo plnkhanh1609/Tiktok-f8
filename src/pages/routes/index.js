@@ -1,26 +1,29 @@
-import DefaultLayout from '~/components/Layouts/DefaultLayout';
-import Following from '../Following';
-import Home from '../Home';
-import Upload from '../Upload';
-import { HeaderOnly } from '~/components/Layouts';
 
+import { Following, Home, Upload, Profile, ErrorPage } from '~/pages';
+import config from '~/config';
+import DefaultLayout ,{ HeaderOnly } from '~/Layouts';
 const publicRoutes = [
     {
         path: '/',
         element: <DefaultLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
-                path: '/',
+                path: config.routes.home,
                 element: <Home />,
             },
             {
-                path: 'following',
+                path: config.routes.following,
                 element: <Following />,
+            },
+            {
+                path: config.routes.profile,
+                element: <Profile />,
             },
         ],
     },
     {
-        path: 'upload',
+        path: config.routes.upload,
         element: (
             <HeaderOnly>
                 <Upload />

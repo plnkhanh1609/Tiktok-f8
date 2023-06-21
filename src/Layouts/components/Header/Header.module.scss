@@ -1,0 +1,57 @@
+.header {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: var(--white);
+    height: var(--default-layout-header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.wrapper {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 24px 0 16px;
+}
+.logo {
+    min-width: 300px;
+}
+//Action
+.more-btn {
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+.action-btn {
+    height: 3.2rem;
+    padding: 0;
+    background-color: transparent;
+    margin-left: 16px;
+    cursor: pointer;
+    &.message-icon {
+        padding: 3px 3px 0px 3px;
+    }
+}
+.avatar-user {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 22px;
+    cursor: pointer;
+}
+
+//Tooltip
+.tooltip {
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    padding: 8px;
+    background-color: rgba(84, 84, 84, 0.92);
+    color: #fff;
+    border-radius: 8px;
+}
+.tippy-svg-arrow {
+    fill: rgba(84, 84, 84, 0.92);
+}
