@@ -20,8 +20,9 @@
     border: 1.5px solid transparent;
 
     input {
+        padding-right: 40px;
         font-family: var(--font-primary);
-        width: 100%;
+        flex: 1;
         color: var(--black);
         font-size: 1.6rem;
         font-weight: 400;
