@@ -92,7 +92,7 @@ const MENU_USER_ITEM = [
 const handleMenuChange = (menuItem) => {
     console.log(menuItem);
 };
-const currenUser = true;
+const currenUser = false;
 function Header() {
     return (
         <header className={`${cx('header')} d-flex center`}>

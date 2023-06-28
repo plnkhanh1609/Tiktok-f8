@@ -1,0 +1,25 @@
+.wrapper {
+    margin-bottom: 8px;
+}
+
+// MenuItem
+.item {
+    padding: 8px;
+    transition: background-color ease-in-out 200ms;
+    border-radius: 4px;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+    &.active .title,
+    &.active svg {
+        color: var(--primary);
+        fill: rgba(254, 44, 85, 1);
+    }
+}
+.title {
+    color: var(--black);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-left: 8px;
+}

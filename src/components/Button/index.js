@@ -13,6 +13,7 @@ function Button({
     small = false,
     large = false,
     disable = false,
+    center = false,
     to,
     href,
     onClick,
@@ -39,12 +40,13 @@ function Button({
             }
         });
     }
-    const classes = cx('wrapper', 'd-flex', 'center', {
+    const classes = cx('wrapper', 'd-flex', {
         [customClasses]: customClasses,
         text,
         primary,
         rounded,
         outline,
+        center,
         small,
         large,
         disable,
