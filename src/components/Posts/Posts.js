@@ -5,9 +5,9 @@ import styles from './Posts.module.scss';
 import Image from '~/components/Images';
 import Button from '~/components/Button';
 import { CommentIcon, HeartIcon, MusicIcon, ShareIcon } from '~/components/Icons';
+import Video from '~/components/Video';
 const cx = classNames.bind(styles);
 function Videos({ data = [] }) {
-    console.log(data);
     return data.map((item) => (
         <div key={item.id} className={cx('wrapper')}>
             <Link to={`user/@${item.user.nickname}`}>
@@ -33,9 +33,7 @@ function Videos({ data = [] }) {
                     </Link>
                 </h4>
                 <div className={`${cx('video')} d-flex`}>
-                    <div className={`${cx('videoContainer')}`}>
-                        <video controls src={item.file_url} />
-                    </div>
+                    <Video data= {item} />
                     <div className={`${cx('video-cta')} d-flex`}>
                         <button className={`${cx('btn')} d-flex`}>
                             <span className={cx('like-icon')}>

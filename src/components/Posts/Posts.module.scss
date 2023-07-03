@@ -69,6 +69,7 @@
 
 .video {
     align-items: flex-end;
+    height: calc(384.028px + 8.68056vw);
     .video-cta {
         flex-direction: column;
     }
@@ -105,17 +106,4 @@
     }
     padding-top: 8px;
     padding-bottom: 6px;
-}
-.videoContainer {
-    margin-right: 20px;
-    overflow: hidden;
-    border-radius: 8px;
-    height: calc(400px + ((100vw - 768px) / 1152) * 200);
-    // width: calc(384.02778px + 8.68056vw);
-    video {
-        display: block;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-    }
 }

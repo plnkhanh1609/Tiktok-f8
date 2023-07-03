@@ -5,14 +5,13 @@ import { default as HomeVideos } from '~/components/Posts';
 import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
 function Home() {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     const api = 'https://tiktok.fullstack.edu.vn/api/videos?type=for-you&page=1';
     useEffect(() => {
         fetch(api)
-            .then(rs => rs.json())
-            .then(data => setData(data.data))
-    },[]);
-    console.log(data);
+            .then((rs) => rs.json())
+            .then((data) => setData(data.data));
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <HomeVideos data={data} />

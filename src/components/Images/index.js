@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import { forwardRef, useState } from 'react';
+
 import images from '~/assets/images';
 import styles from './Image.module.scss';
-import classNames from 'classnames';
+const cx = classNames.bind(styles);
 const Image = forwardRef(
     (
         {
@@ -22,7 +24,7 @@ const Image = forwardRef(
         return (
             <img
                 ref={ref}
-                className={classNames(styles.wrapper, className, styles.avatar)}
+                className={cx('wrapper',className, {  avatar })}
                 src={fallBack || src}
                 alt={alt}
                 {...props}
