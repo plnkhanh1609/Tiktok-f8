@@ -1,0 +1,65 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.bar {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    cursor: pointer;
+}
+
+.bar-progress {
+    background-color: rgba(255, 255, 255, 0.34);
+    position: absolute;
+    cursor: pointer;
+}
+.circle {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    cursor: pointer;
+}
+.videoBar {
+    .bar {
+        width: 0%;
+        height: 4px;
+    }
+    .bar-progress,
+    .bar {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+    .bar-progress {
+        height: 4px;
+        width: 100%;
+    }
+    .circle {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.volumeBar {
+    height: 48px;
+    .bar {
+        width: 2px;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
+    }
+    .bar-progress {
+        width: 2px;
+        height: 48px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .circle {
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+    }
+}
