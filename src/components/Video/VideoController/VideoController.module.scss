@@ -21,7 +21,7 @@
 .volumeContainer {
     position: relative;
     flex-direction: column;
-    &:hover .volume {
+    &:hover .volume ,&:active .volume{
         opacity: 1;
     }
 }

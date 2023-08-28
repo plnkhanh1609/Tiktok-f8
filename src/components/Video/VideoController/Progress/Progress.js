@@ -1,10 +1,20 @@
 import classNames from 'classnames/bind';
 
 import styles from './Progress.module.scss';
+import { forwardRef } from 'react';
 const cx = classNames.bind(styles);
 
-function Progress({ children, volumeBar = false, videoBar = false  }) {
-    return <div className={cx('wrapper',{volumeBar, videoBar})}>{children}</div>;
+function Progress({ children, volumeBar = false, videoBar = false, onDragStart, ...props }, ref) {
+    return (
+        <div
+            onDragStart={onDragStart}
+            ref={ref}
+            {...props}
+            className={cx('wrapper', { volumeBar, videoBar })}
+        >
+            {children}
+        </div>
+    );
 }
 
-export default Progress;
+export default forwardRef(Progress);
