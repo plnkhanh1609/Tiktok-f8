@@ -1,30 +1,39 @@
 .wrapper {
     width: 100%;
     position: relative;
+    cursor: pointer;
 }
 
 .bar {
     background-color: rgb(255, 255, 255);
     position: absolute;
     cursor: pointer;
+    animation: all linear;
 }
 
 .bar-progress {
     background-color: rgba(255, 255, 255, 0.34);
     position: absolute;
     cursor: pointer;
+    animation: all linear;
 }
 .circle {
+    z-index: 100;
     width: 12px;
     height: 12px;
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
+    animation: left linear;
     cursor: pointer;
+    user-select: unset;
+    &:-moz-drag-over {
+        cursor: pointer;
+    }
 }
 .videoBar {
     .bar {
         width: 0%;
-        height: 4px;
+        height: 2px;
     }
     .bar-progress,
     .bar {
@@ -33,13 +42,24 @@
         left: 0;
     }
     .bar-progress {
-        height: 4px;
+        height: 2px;
         width: 100%;
     }
     .circle {
+        display: none;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        &:active:hover {
+            cursor: pointer;
+        }
+    }
+    &:hover .bar,
+    &:hover .bar-progress {
+        height: 4px;
+    }
+    &:hover .circle {
+        display: block;
     }
 }
 .volumeBar {
@@ -49,10 +69,11 @@
         left: 50%;
         bottom: 0px;
         transform: translateX(-50%);
+        transition: .05 ease;
     }
     .bar-progress {
         width: 2px;
-        height: 48px;
+        height: 100%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -61,5 +82,7 @@
         position: absolute;
         left: 50%;
         bottom: 0px;
+        transform: translateX(-50%);
+        transition: .05 ease;
     }
 }

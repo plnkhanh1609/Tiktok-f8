@@ -6,9 +6,12 @@ import Image from '~/components/Images';
 import Button from '~/components/Button';
 import { CommentIcon, HeartIcon, MusicIcon, ShareIcon } from '~/components/Icons';
 import Video from '~/components/Video';
+import { useRef } from 'react';
 const cx = classNames.bind(styles);
 function Videos({ data = [] }) {
-    return data.map((item) => (
+    let currentIndex = useRef(0);
+    
+    return data.map((item, index) => (
         <div key={item.id} className={cx('wrapper')}>
             <Link to={`user/@${item.user.nickname}`}>
                 <Image src={item.user.avatar} avatar width="56px" height="56px" />
@@ -33,7 +36,7 @@ function Videos({ data = [] }) {
                     </Link>
                 </h4>
                 <div className={`${cx('video')} d-flex`}>
-                    <Video data= {item} />
+                    {item && <Video autoplay={currentIndex.current === index} data={item} />}
                     <div className={`${cx('video-cta')} d-flex`}>
                         <button className={`${cx('btn')} d-flex`}>
                             <span className={cx('like-icon')}>

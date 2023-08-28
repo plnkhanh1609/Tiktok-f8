@@ -1,9 +1,19 @@
 import classNames from 'classnames/bind';
 
 import styles from './Progress.module.scss';
+import { forwardRef } from 'react';
 const cx = classNames.bind(styles);
-function Bar({videoBar = false,...props}) {
-    return <div style={{...props}} className={cx('bar',{videoBar})}></div>;
+function Bar({ onMouseDown, onDrag, onDragEnd, videoBar = false, ...props }, ref) {
+    return (
+        <div
+            onDragEnd={onDragEnd}
+            onDrag={onDrag}
+            ref={ref}
+            onMouseDown={onMouseDown}
+            style={{ ...props }}
+            className={cx('bar', { videoBar })}
+        ></div>
+    );
 }
 
-export default Bar;
+export default forwardRef(Bar);
