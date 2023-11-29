@@ -57,7 +57,7 @@ function Search() {
             render={(attrs) => (
                 <div className={`${cx('search-result')}`} {...attrs}>
                     <h4>Bạn có thể thích</h4>
-                    {searchResult.length > 0 && (
+                    {searchResult && searchResult.length > 0 && (
                         <PopperWrapper>
                             <h4 className={`${cx('search-account__title')}`}>Tài khoản</h4>
                             <AccountItem data={searchResult} />
